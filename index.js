@@ -45,6 +45,7 @@ export default class Carousel extends Component {
     ]),
     chosenBulletStyle: Text.propTypes.style,
     onAnimateNextPage: React.PropTypes.func,
+      swipe: React.PropTypes.bool,
   };
 
   static defaultProps = {
@@ -68,6 +69,7 @@ export default class Carousel extends Component {
     leftArrowText: '',
     rightArrowText: '',
     onAnimateNextPage: undefined,
+      swipe: true
   };
 
   constructor(props) {
@@ -338,6 +340,7 @@ export default class Carousel extends Component {
               height: size.height,
             },
           ]}
+          scrollEnabled={this.props.swipe}
         >
           {this.pages}
         </ScrollView>
